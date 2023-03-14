@@ -31,7 +31,7 @@ public class LinkedList<T> {
     1. length of LinkedList should be increased after adding
     2. If element is null, throw exception
      */
-    public int addElement(T element){
+    public void addElement(T element){
         if(element==null){
             throw new RuntimeException("Cannot add null");
         }
@@ -40,14 +40,13 @@ public class LinkedList<T> {
 
         if(headNode==null){
             headNode=tempNode;
-            return getLength();
+            return;
         }
         var iteratorNode =headNode;
         while(iteratorNode.getNextNode()!=null){
             iteratorNode=iteratorNode.getNextNode();
         }
         iteratorNode.setNextNode(tempNode);
-        return getLength();
     }
 
     int getLength(){

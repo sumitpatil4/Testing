@@ -51,8 +51,10 @@ public class LinkedListTest {
     @DisplayName("Given an element to add, getAddElement() should increase the length")
     void testAddElement_shouldIncreaseLengthAfterAdding(){
         list.addElement(1);
+        int curr_length=list.getLength();
         list.addElement(2);
-        assertEquals(list.getLength()+1,list.addElement(4));
+        int new_length=list.getLength();
+        assertEquals(curr_length+1,new_length);
     }
 
     @Test
