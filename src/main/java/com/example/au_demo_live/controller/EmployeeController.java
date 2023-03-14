@@ -30,7 +30,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/{id}")
-    public Employee getEmployee(@PathVariable String id) throws EmployeeNotFound {
+    public Employee getEmployee(@PathVariable String id) throws Exception {
         return employeeService.getEmployee(id);
     }
 }

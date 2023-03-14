@@ -18,7 +18,7 @@ public class EmployeeService {
         return employees;
     }
 
-    public Employee getEmployee(String id) throws EmployeeNotFound {
+    public Employee getEmployee(String id) throws Exception {
         return employee
                 .stream()
                 .filter(employee -> employee.getId().equals(id))
