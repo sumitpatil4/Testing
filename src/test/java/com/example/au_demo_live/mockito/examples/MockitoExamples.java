@@ -26,7 +26,7 @@ public class MockitoExamples {
     @Test
     public void testLinkedListGetElement_ThrowException_TestAnyString(){
         final var list = Mockito.mock(java.util.LinkedList.class);
-        when(list.add("Patil")).thenThrow(new RuntimeException("You cannot insert data in this list"));
+        when(list.add("Sumit")).thenThrow(new RuntimeException("You cannot insert data in this list"));
         assertThrows(RuntimeException.class,()->list.add("Sumit"));
     }
 }
