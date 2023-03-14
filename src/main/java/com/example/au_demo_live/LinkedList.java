@@ -31,19 +31,33 @@ public class LinkedList<T> {
     1. length of LinkedList should be increased after adding
     2. If element is null, throw exception
      */
-    public void addElement(T element){
+    public int addElement(T element){
+        if(element==null){
+            throw new RuntimeException("Cannot add null");
+        }
         final var tempNode = new Node<T>();
         tempNode.setValue(element);
 
         if(headNode==null){
             headNode=tempNode;
-            return;
+            return getLength();
         }
         var iteratorNode =headNode;
         while(iteratorNode.getNextNode()!=null){
             iteratorNode=iteratorNode.getNextNode();
         }
         iteratorNode.setNextNode(tempNode);
+        return getLength();
+    }
+
+    int getLength(){
+        var iteratorNode=headNode;
+        var length=0;
+        while(iteratorNode.getNextNode()!=null){
+            iteratorNode=iteratorNode.getNextNode();
+            length++;
+        }
+        return length;
     }
 }
 
